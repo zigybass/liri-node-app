@@ -1,6 +1,6 @@
 # liri-node-app
 
-##Created and maintained by Chris Zeigler
+## Created and maintained by Chris Zeigler
 
 **Goal:**
 To demonstrate how to interact with APIs using the command line. 
