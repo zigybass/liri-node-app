@@ -21,7 +21,7 @@ This app takes in two commands with an argument after each command. The commands
 
     node liri.js spotify-this-song uptown funk 
 
-Format: ![Terminal](example.png)
+![Terminal](example.png)
 
 What returns is the Song Name, Artist, Album Name, and a preview URL so I can listen (not all songs have a preview available).
 
