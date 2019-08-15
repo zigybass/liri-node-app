@@ -26,11 +26,10 @@ switch (process.argv[2]) {
         musicFunc();
         break;
     case "movie-this":
-        //console.log("movie")
         movieFunc();
         break;
     case "do-what-it-says":
-        console.log("huh?")
+        //console.log("huh?")
         doThis();
         break;
     default:
@@ -87,6 +86,21 @@ function movieFunc () {
     searchItem ? searchOmdb(searchItem) : searchOmdb("Mr. Nobody")
 };
 
+let textArray;
+
 function doThis () {
-    console.log("do this")
+    fs.readFile("random.txt", "utf8", function (err, data) {
+        if (err) {
+            console.log(err)
+        } else {
+            textArray = data.slice(1).split(",");
+            runText()
+        }
+    })
 };
+
+function runText () {
+    if ( textArray[0] == "spotify-this-song") {
+        searchSpotify(textArray[1])
+    }
+}
