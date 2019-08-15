@@ -93,14 +93,8 @@ function doThis () {
         if (err) {
             console.log(err)
         } else {
-            textArray = data.slice(1).split(",");
-            runText()
+            textArray = (data.slice(1).split(","));
+            searchSpotify(textArray[1])
         }
     })
 };
-
-function runText () {
-    if ( textArray[0] == "spotify-this-song") {
-        searchSpotify(textArray[1])
-    }
-}
