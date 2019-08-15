@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const fs = require("fs");
 const keys = require("./keys.js");
-const Axios = require("axios");
+const axios = require("axios");
 const Spotify = require('node-spotify-api')
 
 const spotify = new Spotify ({
@@ -23,11 +23,10 @@ for (let i = 3; i < nodeArgs.length; i++) {
 
 switch (process.argv[2]) {
     case "spotify-this-song":
-        //console.log(searchItem)
         musicFunc();
         break;
     case "movie-this":
-        console.log("movie")
+        //console.log("movie")
         movieFunc();
         break;
     case "do-what-it-says":
@@ -38,8 +37,8 @@ switch (process.argv[2]) {
         console.log("Try another command")
 }
 
-function musicFunc () {
-    spotify.search({type: "track", query: searchItem}, function (err, data) {
+function runSpotify(song) {
+    spotify.search({type: "track", query: song}, function (err, data) {
         if (err) {
             console.log(err)
         } else {
@@ -49,10 +48,28 @@ function musicFunc () {
             console.log("Preview: " + data.tracks.items[0].preview_url)
         }
     })
+}
+
+function musicFunc () {
+    if (searchItem) {
+        return runSpotify(searchItem);
+    } else {
+        // This needs modifying to run Ace of Base
+        return runSpotify("The Sign");
+    }
 };
 
 function movieFunc () {
-    console.log("movie function")
+    //const omdbKey = "trilogy";
+    axios.get("http://www.omdbapi.com/?apikey=trilogy&t=" + searchItem
+        ).then( function (response) {
+            console.log("Title: " + response.data.Title);
+            console.log("Release Year: " + response.data.Year);
+            console.log("IMDB Rating: " + response.data.imdbRating)
+            console.log("Rotten Tomatoes: " + JSON.stringify(response.data.Ratings[1].Value))
+        }).catch( function (error) {
+            console.log(error)
+        })
 };
 
 function doThis () {
