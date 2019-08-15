@@ -37,7 +37,7 @@ switch (process.argv[2]) {
         console.log("Try another command")
 }
 
-function runSpotify(song) {
+function searchSpotify(song) {
     spotify.search({type: "track", query: song}, function (err, data) {
         if (err) {
             console.log(err)
@@ -52,10 +52,10 @@ function runSpotify(song) {
 
 function musicFunc () {
     if (searchItem) {
-        return runSpotify(searchItem);
+        return searchSpotify(searchItem);
     } else {
-        // This needs modifying to run Ace of Base
-        return runSpotify("The Sign");
+        // WIP: This needs modifying to run Ace of Base
+        return searchSpotify("The Sign");
     }
 };
 
@@ -65,8 +65,12 @@ function movieFunc () {
         ).then( function (response) {
             console.log("Title: " + response.data.Title);
             console.log("Release Year: " + response.data.Year);
-            console.log("IMDB Rating: " + response.data.imdbRating)
-            console.log("Rotten Tomatoes: " + JSON.stringify(response.data.Ratings[1].Value))
+            console.log("IMDB Rating: " + response.data.imdbRating);
+            console.log("Rotten Tomatoes: " + JSON.stringify(response.data.Ratings[1].Value));
+            console.log("Produced in: " + response.data.Country);
+            console.log("Movie Language: " + response.data.Language);
+            console.log("Plot: " + response.data.Plot);
+            console.log("Actors: " + response.data.Actors);
         }).catch( function (error) {
             console.log(error)
         })
