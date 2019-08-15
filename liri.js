@@ -59,9 +59,8 @@ function musicFunc () {
     }
 };
 
-function movieFunc () {
-    //const omdbKey = "trilogy";
-    axios.get("http://www.omdbapi.com/?apikey=trilogy&t=" + searchItem
+function searchOmdb (movie) {
+    axios.get("http://www.omdbapi.com/?apikey=trilogy&t=" + movie
         ).then( function (response) {
             console.log("Title: " + response.data.Title);
             console.log("Release Year: " + response.data.Year);
@@ -74,6 +73,10 @@ function movieFunc () {
         }).catch( function (error) {
             console.log(error)
         })
+};
+
+function movieFunc () {
+    searchItem ? searchOmdb(searchItem) : searchOmdb("Mr. Nobody")
 };
 
 function doThis () {
