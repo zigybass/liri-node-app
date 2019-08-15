@@ -35,3 +35,5 @@ What returns is information about that particular movie such as release year, ro
 -----------------------------
 
 Explore and have fun! If you have any questions, feel free to email me at zigybass@gmail.com and thanks again!
+
+![Terminal](example2.png)
