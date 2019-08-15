@@ -20,7 +20,7 @@ Welcome to LIRI! This project is a Command Line Interface App that allows you to
 This app takes in two commands with an argument after each command. The commands are "spotify-this-song" and "movie-this".  For example: if I wanted to find more information about the song "Uptown Funk" by Bruno Mars, I can enter this command into the command line: 
 
     node liri.js spotify-this-song uptown funk 
-
+Example:
 ![Terminal](example.png)
 
 What returns is the Song Name, Artist, Album Name, and a preview URL so I can listen (not all songs have a preview available).
