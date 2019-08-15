@@ -54,8 +54,16 @@ function musicFunc () {
     if (searchItem) {
         return searchSpotify(searchItem);
     } else {
-        // WIP: This needs modifying to run Ace of Base
-        return searchSpotify("The Sign");
+        spotify.search({type: "track", query: "the+sign"}, function (err, data) {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log("Artist Name: " + data.tracks.items[1].artists[0].name)
+                console.log("Song Name: " + data.tracks.items[1].name);
+                console.log("Album Name: " + data.tracks.items[1].album.name)
+                console.log("Preview: " + data.tracks.items[1].preview_url)
+            }
+        })
     }
 };
 
