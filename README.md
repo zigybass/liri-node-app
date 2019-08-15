@@ -2,10 +2,10 @@
 
 Created and maintained by Chris Zeigler
 
-**Goal**
+**Goal:**
 To demonstrate how to interact with APIs using the command line. 
 
-**Tools Used**
+**Tools Used:**
 Node.JS
 VS Code
 Spotify and OMDB APIs
