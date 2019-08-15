@@ -24,13 +24,13 @@ for (let i = 3; i < nodeArgs.length; i++) {
 switch (process.argv[2]) {
     case "spotify-this-song":
         fs.appendFile("log.txt", ",spotify-this-song", err => {
-            err ? console.log(err) : console.log("command success")
+            err ? console.log(err) : console.log("")
         })
         musicFunc();
         break;
     case "movie-this":
             fs.appendFile("log.txt", ",movie-this", err => {
-                err ? console.log(err) : console.log("command success")
+                err ? console.log(err) : console.log("")
             })
         movieFunc();
         break;
@@ -51,7 +51,7 @@ function searchSpotify(song) {
             console.log("Album Name: " + data.tracks.items[0].album.name)
             console.log("Preview: " + data.tracks.items[0].preview_url)
             fs.appendFile("log.txt", "," + song, function (err) {
-                err ? console.log(err) : console.log("Song Success")
+                err ? console.log(err) : console.log("")
             })
         }
     })
@@ -86,7 +86,7 @@ function searchOmdb (movie) {
             console.log("Plot: " + response.data.Plot);
             console.log("Actors: " + response.data.Actors);
             fs.appendFile("log.txt", "," + movie, function (err) {
-                err ? console.log(err) : console.log("Movie Success")})
+                err ? console.log(err) : console.log("")})
         }).catch( function (error) {
             console.log(error)
         })
