@@ -15,7 +15,7 @@ To demonstrate how to interact with APIs using the command line.
 -----------------------------
 -----------------------------
 
-Welcome to LIRI! This project is a Command Line Interface App that allows you to use commands to retreive data from APIs and then display them on the console/terminal. LIRI is currently connected to the Spotify API and the OMBD API. 
+Welcome to LIRI! This project is a Command Line Interface App that allows you to use commands to retrieve data from APIs and then display them on the console/terminal. LIRI is currently connected to the Spotify API and the OMBD API. 
 
 This app takes in two commands with an argument after each command. The commands are "spotify-this-song" and "movie-this".  For example: if I wanted to find more information about the song "Uptown Funk" by Bruno Mars, I can enter this command into the command line: 
 
